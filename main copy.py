@@ -1,7 +1,5 @@
-from datetime import datetime
 from fastapi import FastAPI
 from typing import Optional
-from datetime import datetime
 from sqlmodel import Field, Session, SQLModel, create_engine, select
 
 
@@ -10,7 +8,7 @@ class Cliente(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     posicao: int
     nome: str
-    chegada: datetime
+    chegada: Optional[int] = None
 
 
 
